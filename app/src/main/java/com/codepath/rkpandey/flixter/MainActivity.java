@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
 
         //initialize movies
         movies=new ArrayList<>();
-        //create an adapter passing in sample user data
+
+        //decleare a new movie adapter
         MovieAdapter movieAdapter=new MovieAdapter(this,movies);
         //set the adapter on recycler view to populate item
         rvMovies.setAdapter(movieAdapter);
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
                 Log.d(TAG,"onSuccess");
-//                pull out the data
+                //pull out the data
                 JSONObject jsonOBject=json.jsonObject;
                 //results key may not exist, use try catch
                 try {

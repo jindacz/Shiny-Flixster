@@ -3,16 +3,24 @@ package com.codepath.rkpandey.flixter.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
 //create movie models
+@Parcel
 public class Movie {
     String posterPath;
     String title;
     String overview;
     String backdropPath;
+    double rating;
+
+    //empty constructer for Parceler library
+    public Movie(){
+
+    }
 
     //construct JSON object
     //take in a json, read in the fields we care about
@@ -21,6 +29,7 @@ public class Movie {
         posterPath=jsonOBject.getString("poster_path");
         title=jsonOBject.getString("title");
         overview=jsonOBject.getString("overview");
+        rating=jsonOBject.getDouble("vote_average");
     }
 
     public static List<Movie> fromJsonArray(JSONArray movieJsonArray) throws JSONException {
@@ -47,5 +56,9 @@ public class Movie {
 
     public String getOverview() {
         return overview;
+    }
+
+    public double getRating() {
+        return rating;
     }
 }
