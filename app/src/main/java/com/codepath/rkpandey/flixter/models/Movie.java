@@ -7,6 +7,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+//create movie models
 public class Movie {
     String posterPath;
     String title;
