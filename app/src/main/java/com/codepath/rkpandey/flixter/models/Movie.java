@@ -12,9 +12,11 @@ public class Movie {
     String posterPath;
     String title;
     String overview;
+    String backdropPath;
 
     //take in a json, read in the fields we care about
     public Movie(JSONObject jsonOBject) throws JSONException {
+        backdropPath=jsonOBject.getString("backdrop_path");
         posterPath=jsonOBject.getString("poster_path");
         title=jsonOBject.getString("title");
         overview=jsonOBject.getString("overview");
@@ -32,6 +34,10 @@ public class Movie {
     //fetch all available size, add relative path
     public String getPosterPath() {
         return String.format("https://image.tmdb.org/t/p/w342/%s",posterPath);
+    }
+
+    public String getBackdropPath() {
+        return String.format("https://image.tmdb.org/t/p/w342/%s",backdropPath);
     }
 
     public String getTitle() {
