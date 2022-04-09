@@ -14,6 +14,7 @@ public class Movie {
     String overview;
     String backdropPath;
 
+    //construct JSON object
     //take in a json, read in the fields we care about
     public Movie(JSONObject jsonOBject) throws JSONException {
         backdropPath=jsonOBject.getString("backdrop_path");
